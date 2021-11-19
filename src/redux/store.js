@@ -11,16 +11,18 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { configureStore } from '@reduxjs/toolkit';
 import contactsReducer from './contacts/contactsReducer';
+import { filterReducer } from './contacts/contactsReducer';
 
 const contactsPersistConfig = {
   key: 'contacts',
   storage,
-  blacklist: ['filter'],
+  whiteList: ['items'],
 };
 
 const store = configureStore({
   reducer: {
     contacts: persistReducer(contactsPersistConfig, contactsReducer),
+    filter: filterReducer,
   },
   middleware: getDefaultMiddleware => [
     ...getDefaultMiddleware({
@@ -35,16 +37,3 @@ const store = configureStore({
 const persistore = persistStore(store);
 
 export { store, persistore };
-
-// Redux
-// import { createStore, combineReducers } from "redux";
-// import { composeWithDevTools } from "redux-devtools-extension";
-// import contactsReducer from './contacts/contactsReducer';
-
-// const rootReducer = combineReducers({
-//   contacts: contactsReducer,
-// });
-
-// const store = createStore(rootReducer, composeWithDevTools());
-
-// export default store;
