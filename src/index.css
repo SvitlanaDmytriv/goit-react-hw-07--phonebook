@@ -1,0 +1,20 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+body {
+  font-size: 18px;
+  line-height: 1.2;
+
+  background-image: url(./image/backgroundImg.jpg);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

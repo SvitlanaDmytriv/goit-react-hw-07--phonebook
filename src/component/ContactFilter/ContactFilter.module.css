@@ -1,0 +1,24 @@
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  width: 160px;
+  margin-top: 5px;
+  padding: 5px;
+
+  font-size: 15px;
+
+  border: 1px solid grey;
+
+  background: #fff9f961;
+  backdrop-filter: blur(20px);
+}
+
+.input:hover,
+.input:focus {
+  outline: 2px solid #102e4f;
+  border: 1px solid transparent;
+}
